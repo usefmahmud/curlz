@@ -9,7 +9,7 @@ export const METHODS = [
 ] as const;
 export type HttpMethod = (typeof METHODS)[number];
 
-export type AuthType = "bearer" | "basic" | "apikey";
+export type AuthType = "none" | "bearer" | "basic" | "apikey";
 export type BodyType = "json" | "text";
 
 export interface AuthDoc {
@@ -55,14 +55,14 @@ export interface MetaDoc {
 }
 
 export interface FolderNode {
-  kind: "folder";
+  type: "folder";
   name: string;
   path: string;
   children: ItemNode[];
 }
 
 export interface RequestNode {
-  kind: "request";
+  type: "request";
   name: string;
   path: string;
   doc: RequestDoc;
