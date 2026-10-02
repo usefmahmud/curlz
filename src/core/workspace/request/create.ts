@@ -23,7 +23,7 @@ export const createRequest = async (
   const slug = uniqueSlug(slugify(name), takenStems(siblings));
   const doc = defaultRequestDoc(name);
   const node: RequestNode = {
-    kind: "request",
+    type: "request",
     name: doc.name,
     path: joinPath(folder, `${slug}.json`),
     doc,

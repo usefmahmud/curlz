@@ -16,7 +16,7 @@ export const defaultRequestDoc = (name: string): RequestDoc => {
     headers: [],
     params: [],
     auth: { type: "none" },
-    body: { type: "none", content: "" },
+    body: { type: "json", content: "" },
     settings: { ...DEFAULT_SETTINGS },
   };
 };

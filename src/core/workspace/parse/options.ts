@@ -13,13 +13,7 @@ export const AUTH_TYPES: readonly AuthType[] = [
   "basic",
   "apikey",
 ];
-export const BODY_TYPES: readonly BodyType[] = [
-  "none",
-  "json",
-  "text",
-  "form",
-  "multipart",
-];
+export const BODY_TYPES: readonly BodyType[] = ["json", "text"];
 
 export const DEFAULT_SETTINGS: SettingsDoc = {
   timeout_ms: 30000,
@@ -42,7 +36,7 @@ export const parseAuth = (path: string, raw: unknown): AuthDoc => {
 };
 
 export const parseBody = (path: string, raw: unknown): BodyDoc => {
-  if (raw === undefined) return { type: "none", content: "" };
+  if (raw === undefined) return { type: "json", content: "" };
   const obj = asObject(path, "body", raw);
   const type = oneOf(path, "body.type", obj.type, BODY_TYPES);
   const content =

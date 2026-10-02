@@ -16,7 +16,7 @@ const splitCollections = (
 ): FolderNode[] => {
   const folders: FolderNode[] = [];
   for (const child of root.children) {
-    if (child.kind === "folder") {
+    if (child.type === "folder") {
       folders.push(child);
     } else {
       issues.push({

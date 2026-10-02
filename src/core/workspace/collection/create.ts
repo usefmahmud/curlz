@@ -21,7 +21,7 @@ export const createCollection = async (
   const siblings = listChildren(ws, folder);
   const slug = uniqueSlug(slugify(name), takenFolders(siblings));
   const node: FolderNode = {
-    kind: "folder",
+    type: "folder",
     name: slug,
     path: joinPath(folder, slug),
     children: [],
